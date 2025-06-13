@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <title>Vue.jsのサンプル</title>
+  </head>
+  <body>
+    <div id="app" class="">
+      <p>{{ message }}</p>
+      <p>{{ count }}</p>
+      <p>{{ user.lastName }}</p>
+      <p>{{ colors[1] }}</p>
+    </div>
+
+    <script>
+      const { createApp, ref } = Vue;
+
+      createApp({
+        setup() {
+          return {
+            message: "Hello Vue!",
+            count: 77,
+            user: {
+              firstName: "Bob",
+              lastName: "Marley",
+              country: "Jamaica",
+            },
+            colors: ["Red", "Green", "Blue"],
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
